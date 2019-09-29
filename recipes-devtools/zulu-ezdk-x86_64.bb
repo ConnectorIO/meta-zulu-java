@@ -31,6 +31,9 @@ do_install () {
   cp -a ${S}/zulu${VERSION}-jdk${BUILD_NUMBER}-${SUFFIX}/* ${D}${datadir}/zulu-${PV}_${PV_UPDATE}
   install -d -m 0755 ${D}${bindir}
   ln -sf ${datadir}/zulu-${PV}_${PV_UPDATE}/bin/java ${D}${bindir}/java
+
+  install -d ${D}/lib64
+  ln -s -r ${D}/lib/ld-linux-x86-64.so.2 ${D}/lib64/ld-linux-x86-64.so.2
 }
 
 # All the files are provided in a binaray package, and keeping all the
@@ -38,7 +41,9 @@ do_install () {
 # Avoid these packaging failure by skiping all the QA checks
 INSANE_SKIP_${PN} = "${ERROR_QA} ${WARN_QA}"
 
-FILES_${PN} = "/usr/"
+FILES_${PN} = "/usr/ \
+               /lib64/ld-linux-x86-64.so.2 \
+                "
 RPROVIDES_${PN} = "zulu-jdk"
 PROVIDES += "virtual/java"
 
