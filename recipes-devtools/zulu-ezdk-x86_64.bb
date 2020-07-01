@@ -1,8 +1,8 @@
 
-PV = "1.9.0"
-PV_UPDATE = "131"
-VERSION = "11.33.15-ca"
-BUILD_NUMBER = "11.0.4"
+PV = "11.0.7"
+PV_UPDATE = "10"
+VERSION = "11.39.15-ca"
+BUILD_NUMBER = "11.0.7"
 SUFFIX = "linux_x64"
 
 SUMMARY = "Azul Zulu Java Development Kit (JDK) binaries"
@@ -20,8 +20,8 @@ LIC_FILES_CHKSUM = "file://zulu${VERSION}-jdk${BUILD_NUMBER}-${SUFFIX}/legal/jdk
 
 SRC_URI="https://cdn.azul.com/zulu/bin/zulu${VERSION}-jdk${BUILD_NUMBER}-${SUFFIX}.tar.gz"
 
-SRC_URI[md5sum] = "7fd86dd82a364a594ccce09f8614d535"
-SRC_URI[sha256sum] = "cd807601c93d2e9c0e524b251d277da0add8026c4a7fb9908c72dcc19135edc6"
+SRC_URI[md5sum] = "081b4b210e8ac8e70ccbbbdc6c474fd7"
+SRC_URI[sha256sum] = "df0de67998ac0c58b3c9e83c86e2a81daca05dc5adc189d942bc5d3f4691e749"
 
 PR = "u${PV_UPDATE}"
 S = "${WORKDIR}"
